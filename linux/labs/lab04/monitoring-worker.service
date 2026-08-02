@@ -1,0 +1,12 @@
+[Unit]
+Description=Monitoring Worker Training Service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/opt/monitoring-worker/monitoring-worker.sh
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target
