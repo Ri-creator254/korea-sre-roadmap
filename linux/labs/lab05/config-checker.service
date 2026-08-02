@@ -1,0 +1,13 @@
+[Unit]
+Description=Configuration Diagnostics Training Service
+After=network.target
+
+[Service]
+Type=simple
+EnvironmentFile=/etc/default/config-checker
+ExecStart=/opt/config-checker/config-checker.sh
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
